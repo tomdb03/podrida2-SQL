@@ -38,7 +38,7 @@ include('inc/header.php');
 					<div style="margin-top:10px" class="form-group">                               
 						<div class="col-sm-12 controls">
 						Admin: admin@webdamn.com<br>
-						contraseña:123	<br><br>									
+						Contraseña: 123	<br><br>									
 						</div>						
 					</div>	
 				</form>   
