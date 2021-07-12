@@ -17,7 +17,7 @@ include('inc/header.php');
 			</div>						
 			<div class="row"><!--row begins-->
 				<div class="col-lg-3 col-sm-6">
-					<div class="card">
+					<!-- <div class="card">
 						<div class="content">
 							<div class="row">
 								<div class="col-xs-5">

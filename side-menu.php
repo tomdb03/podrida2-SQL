@@ -13,11 +13,11 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li id="students">
+                <!-- <li id="students">
                     <a href="students.php" class="menu-link">
                         <i class="ti-user"></i>
                         <p>Student</p>
-                    </a>
+                    </a> -->
                 </li>
                 <li id="classes">
                     <a href="classes.php" class="menu-link">
