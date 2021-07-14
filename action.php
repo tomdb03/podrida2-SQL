@@ -64,7 +64,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateTeacher') {
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteTeacher') {
 	$school->deleteTeacher();
 }
-/********Subject********/
+/********Subject*******
 if(!empty($_POST['action']) && $_POST['action'] == 'listSubject') {
 	$school->listSubject();
 }
@@ -79,5 +79,5 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateSubject') {
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteSubject') {
 	$school->deleteSubject();
-}
+} */
 ?>
