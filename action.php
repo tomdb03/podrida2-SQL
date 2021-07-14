@@ -16,7 +16,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateClass') {
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteClass') {
 	$school->deleteClass();
-}
+} /***student 
 if(!empty($_POST['action']) && $_POST['action'] == 'listStudent') {
 	$school->listStudent();
 }
@@ -31,7 +31,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateStudent') {
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteStudent') {
 	$school->deleteStudent();
-}
+} **/
 /********sections********/
 if(!empty($_POST['action']) && $_POST['action'] == 'listSections') {
 	$school->listSections();
@@ -48,7 +48,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateSection') {
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteSection') {
 	$school->deleteSection();
 }
-/********sections********/
+/********teacher********/
 if(!empty($_POST['action']) && $_POST['action'] == 'listTeacher') {
 	$school->listTeacher();
 }
