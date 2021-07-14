@@ -80,18 +80,4 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateSubject') {
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteSubject') {
 	$school->deleteSubject();
 }
-/********attendance********/
-
-/***if(!empty($_POST['action']) && $_POST['action'] == 'getStudents') {
-	$school->getStudents();
-}
-if(!empty($_POST['action']) && $_POST['action'] == 'updateAttendance') {
-	$school->updateAttendance();
-}
-if(!empty($_POST['action']) && $_POST['action'] == 'attendanceStatus') {
-	$school->attendanceStatus();
-}
-if(!empty($_POST['action']) && $_POST['action'] == 'getStudentsAttendance') {
-	$school->getStudentsAttendance();
-} ***/
 ?>
