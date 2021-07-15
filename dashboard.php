@@ -21,32 +21,6 @@ include('inc/header.php');
 						<div class="content">
 							<div class="row">
 								<div class="col-xs-5">
-									<div class="icon-big icon-success text-center">
-										<i class="ti-crown"></i>
-									</div>
-								</div>
-								<div class="col-xs-7">
-									<div class="numbers">
-										<p><strong>Sections</strong></p>										
-									</div>
-								</div>
-							</div>
-							<a href="sections.php">
-								<div class="footer">
-								<hr />
-								<div class="stats">
-									<i class="ti-arrow-right"></i>View
-								</div>
-							</div>
-						</a>
-						</div>
-					</div>
-				</div>				
-				<div class="col-lg-3 col-sm-6">
-					<div class="card">
-						<div class="content">
-							<div class="row">
-								<div class="col-xs-5">
 									<div class="icon-big icon-info text-center">
 										<i class="ti-id-badge"></i>
 									</div>
@@ -58,6 +32,32 @@ include('inc/header.php');
 								</div>
 							</div>
 							<a href="teacher.php">
+								<div class="footer">
+								<hr />
+								<div class="stats">
+									<i class="ti-arrow-right"></i>View
+								</div>
+							</div>
+						</a>
+						</div>
+					</div>
+				</div>				
+				<div class="col-lg-3 col-sm-6">
+				<div class="card">
+						<div class="content">
+							<div class="row">
+								<div class="col-xs-5">
+									<div class="icon-big icon-success text-center">
+										<i class="ti-crown"></i>
+									</div>
+								</div>
+								<div class="col-xs-7">
+									<div class="numbers">
+										<p><strong>Sections</strong></p>										
+									</div>
+								</div>
+							</div>
+							<a href="sections.php">
 								<div class="footer">
 								<hr />
 								<div class="stats">
