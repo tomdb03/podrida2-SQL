@@ -17,21 +17,21 @@ include('inc/header.php');
 			</div>						
 			<div class="row"><!--row begins-->
 				<div class="col-lg-3 col-sm-6">
-					<!-- <div class="card">
+				<div class="card">
 						<div class="content">
 							<div class="row">
 								<div class="col-xs-5">
-									<div class="icon-big icon-warning text-center">
-										<i class="ti-user"></i>
+									<div class="icon-big icon-success text-center">
+										<i class="ti-crown"></i>
 									</div>
 								</div>
 								<div class="col-xs-7">
 									<div class="numbers">
-										<p><strong>Students</strong></p>										
+										<p><strong>Sections</strong></p>										
 									</div>
 								</div>
 							</div>
-							<a href="students.php">
+							<a href="sections.php">
 								<div class="footer">
 								<hr />
 								<div class="stats">
@@ -40,7 +40,7 @@ include('inc/header.php');
 							</div>
 						</a>
 						</div>
-					</div> -->
+					</div>
 				</div>				
 				<div class="col-lg-3 col-sm-6">
 					<div class="card">
@@ -98,7 +98,7 @@ include('inc/header.php');
 			<!--row begins-->
 				<div class="row">
 				<div class="col-lg-3 col-sm-6">
-					<!-- <div class="card">
+					 <!--<div class="card">
 						<div class="content">
 							<div class="row">
 								<div class="col-xs-5">
@@ -124,7 +124,7 @@ include('inc/header.php');
 					</div> -->
 				</div>
 				<div class="col-lg-3 col-sm-6">
-					<div class="card">
+					<!--<div class="card">
 						<div class="content">
 							<div class="row">
 								<div class="col-xs-5">
@@ -147,10 +147,10 @@ include('inc/header.php');
 							</div>
 						</a>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-lg-3 col-sm-6">
-					<!-- <div class="card">
+					 <!--<div class="card">
 						<div class="content">
 							<div class="row">
 								<div class="col-xs-5">
