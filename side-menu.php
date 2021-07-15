@@ -19,10 +19,10 @@
                         <p>Student</p>
                     </a> -->
                 </li>
-                <li id="classes">
-                    <a href="classes.php" class="menu-link">
-                        <i class="ti-crown"></i>
-                        <p>Classes</p>
+                <li id="teacher">
+                    <a href="teacher.php" class="menu-link">
+                        <i class="ti-home"></i>
+                        <p>Teacher</p>
                     </a>
                 </li>
 				<li id="sections">
@@ -31,10 +31,10 @@
                         <p>Sections</p>
                     </a>
                 </li>
-                <li id="teacher">
-                    <a href="teacher.php" class="menu-link">
-                        <i class="ti-home"></i>
-                        <p>Teacher</p>
+                <li id="classes">
+                    <a href="classes.php" class="menu-link">
+                        <i class="ti-crown"></i>
+                        <p>Classes</p>
                     </a>
                 </li>
 				<!-- <li id="subjects">
