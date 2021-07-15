@@ -81,10 +81,10 @@
 						<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
-						<li><a href="profile.php"><i class="fa fa-user"></i> <strong>Profile</strong> </a></li>
+						<!-- <li><a href="profile.php"><i class="fa fa-user"></i> <strong>Profile</strong> </a></li>
 						<li>               
 						<a href="settings.php"><i class="fa fa-cog"></i> <strong>Settings</strong></a>
-						</li>
+						</li>-->
 						<li>
 						<a href="logout.php"><i class="fa fa-power-off"></i> <strong>Logout</strong></a>
 						</li>
