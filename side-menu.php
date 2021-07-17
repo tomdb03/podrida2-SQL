@@ -18,6 +18,12 @@
                         <i class="ti-user"></i>
                         <p>Student</p>
                     </a> -->
+                    </li>
+                <li id="attendance_report">
+                    <a href="attendance_report.php" class="menu-link">
+                        <i class="ti-home"></i>
+                        <p>Reports</p>
+                    </a>
                 </li>
                 <li id="teacher">
                     <a href="teacher.php" class="menu-link">
@@ -35,12 +41,6 @@
                     <a href="classes.php" class="menu-link">
                         <i class="ti-crown"></i>
                         <p>Classes</p>
-                    </a>
-                </li>
-                <li id="attendance_report">
-                    <a href="attendance_report.php" class="menu-link">
-                        <i class="ti-home"></i>
-                        <p>Reportes</p>
                     </a>
                 </li>
 				<!-- <li id="subjects">
