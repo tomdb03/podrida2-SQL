@@ -16,6 +16,32 @@ include('inc/header.php');
 			  <strong><span class="ti ti-announcement fa-2x"></span> </strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!! Check teachers, sections and classes!</strong>.
 			</div>						
 			<div class="row"><!--row begins-->
+			<div class="col-lg-3 col-sm-6">
+				<div class="card">
+						<div class="content">
+							<div class="row">
+								<div class="col-xs-5">
+									<div class="icon-big icon-info text-center">
+										<i class="ti-id-badge"></i>
+									</div>
+								</div>
+								<div class="col-xs-7">
+									<div class="numbers">
+										<p><strong>Reports</strong></p>									   
+									</div>
+								</div>
+							</div>
+							<a href="attendance_report.php">
+								<div class="footer">
+								<hr />
+								<div class="stats">
+									<i class="ti-arrow-right"></i>View
+								</div>
+							</div>
+						</a>
+						</div>
+					</div>
+				</div>				
 				<div class="col-lg-3 col-sm-6">
 				<div class="card">
 						<div class="content">
@@ -41,7 +67,8 @@ include('inc/header.php');
 						</a>
 						</div>
 					</div>
-				</div>				
+				</div>		
+					
 				<div class="col-lg-3 col-sm-6">
 				<div class="card">
 						<div class="content">
