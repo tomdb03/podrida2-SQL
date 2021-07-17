@@ -23,7 +23,7 @@ class School extends Dbconfig {
             $this -> userName = $database -> userName;
             $this -> password = $database ->password;
 			$this -> dbName = $database -> dbName;			
-            $conn = new mysqli('localhost', $database ->userName, $database ->password, $database -> dbName);
+            $conn = new mysqli('localhost', 'root', '', 'webdamn_demos');
             if($conn->connect_error){
                 die("Error failed to connect to MySQL: " . $conn->connect_error);
             } else{
