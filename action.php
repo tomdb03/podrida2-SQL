@@ -16,7 +16,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateClass') {
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteClass') {
 	$school->deleteClass();
-} /***student 
+}
 if(!empty($_POST['action']) && $_POST['action'] == 'listStudent') {
 	$school->listStudent();
 }
@@ -31,7 +31,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateStudent') {
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteStudent') {
 	$school->deleteStudent();
-} **/
+}
 /********sections********/
 if(!empty($_POST['action']) && $_POST['action'] == 'listSections') {
 	$school->listSections();
@@ -48,7 +48,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateSection') {
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteSection') {
 	$school->deleteSection();
 }
-/********teacher********/
+/********sections********/
 if(!empty($_POST['action']) && $_POST['action'] == 'listTeacher') {
 	$school->listTeacher();
 }
@@ -64,7 +64,7 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateTeacher') {
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteTeacher') {
 	$school->deleteTeacher();
 }
-/********Subject*******
+/********Subject********/
 if(!empty($_POST['action']) && $_POST['action'] == 'listSubject') {
 	$school->listSubject();
 }
@@ -79,5 +79,22 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateSubject') {
 }
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteSubject') {
 	$school->deleteSubject();
-} */
+}
+/********attendance********/
+if(!empty($_POST['action']) && $_POST['action'] == 'getStudents') {
+	$school->getStudents();
+}
+if(!empty($_POST['action']) && $_POST['action'] == 'updateAttendance') {
+	$school->updateAttendance();
+}
+if(!empty($_POST['action']) && $_POST['action'] == 'attendanceStatus') {
+	$school->attendanceStatus();
+}
+if(!empty($_POST['action']) && $_POST['action'] == 'getStudentsAttendance') {
+	$school->getStudentsAttendance();
+}
+
+if(!empty($_POST['action']) && $_POST['action'] == 'getTeacherSections') {
+	$school->getTeacherSections();
+}
 ?>

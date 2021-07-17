@@ -37,6 +37,12 @@
                         <p>Classes</p>
                     </a>
                 </li>
+                <li id="attendance_report">
+                    <a href="attendance_report.php" class="menu-link">
+                        <i class="ti-home"></i>
+                        <p>Reportes</p>
+                    </a>
+                </li>
 				<!-- <li id="subjects">
                     <a href="subjects.php" class="menu-link">
                         <i class="ti-home"></i>

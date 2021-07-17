@@ -23,7 +23,7 @@ class School extends Dbconfig {
             $this -> userName = $database -> userName;
             $this -> password = $database ->password;
 			$this -> dbName = $database -> dbName;			
-            $conn = new mysqli('localhost', 'root', '', 'webdamn_demos');
+            $conn = new mysqli('localhost', $database ->userName, $database ->password, $database -> dbName);
             if($conn->connect_error){
                 die("Error failed to connect to MySQL: " . $conn->connect_error);
             } else{
@@ -261,6 +261,16 @@ class School extends Dbconfig {
 		$classHTML = '';
 		while( $class = mysqli_fetch_assoc($result)) {
 			$classHTML .= '<option value="'.$class["id"].'">'.$class["name"].'</option>';	
+		}
+		return $classHTML;
+	}
+
+	public function teacherList(){		
+		$sqlQuery = "SELECT * FROM ".$this->teacherTable;	
+		$result = mysqli_query($this->dbConnect, $sqlQuery);	
+		$classHTML = '';
+		while($class = mysqli_fetch_assoc($result)) {
+			$classHTML .= '<option value="'.$class["teacher_id"].'">'.$class["teacher"].'</option>';	
 		}
 		return $classHTML;
 	}
@@ -669,6 +679,62 @@ class School extends Dbconfig {
 				$studentRows[] = $student['roll_no'];
 				$studentRows[] = $student['name'];		
 				$studentRows[] = $attendance;					
+				$studentData[] = $studentRows;
+			}
+			
+			$output = array(
+				"draw"				=>	intval($_POST["draw"]),
+				"recordsTotal"  	=>  $numRows,
+				"recordsFiltered" 	=> 	$numRows,
+				"data"    			=> 	$studentData
+			);
+			echo json_encode($output);
+			
+		}
+	}
+
+	public function getTeacherSections(){		
+		if($_POST["classid"]) {
+			$sqlQuery = "SELECT c.id, c.name, c.section, t.teacher FROM ".$this->teacherTable." as t LEFT JOIN ".$this->classesTable." as c ON t.teacher_id = c.teacher_id WHERE t.teacher_id = '".$_POST["classid"]."'";
+
+			// if(!empty($_POST["search"]["value"])){
+			// 	$sqlQuery .= ' AND (s.id LIKE "%'.$_POST["search"]["value"].'%" ';
+			// 	$sqlQuery .= ' OR s.name LIKE "%'.$_POST["search"]["value"].'%" ';
+			// 	$sqlQuery .= ' OR s.admission_no LIKE "%'.$_POST["search"]["value"].'%" ';	
+			// 	$sqlQuery .= ' OR s.roll_no LIKE "%'.$_POST["search"]["value"].'%" ';	
+			// 	$sqlQuery .= ' OR a.attendance_date LIKE "%'.$_POST["search"]["value"].'%" )';
+			// }
+			if(!empty($_POST["order"])){
+				$sqlQuery .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
+			} else {
+				$sqlQuery .= 'ORDER BY c.id DESC ';
+			}
+			if($_POST["length"] != -1){
+				$sqlQuery .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+			}	
+
+			$result = mysqli_query($this->dbConnect, $sqlQuery);
+			$numRows = mysqli_num_rows($result);
+			
+			$studentData = array();	
+			
+			while($student = mysqli_fetch_assoc($result) ) {					
+				$attendance = '';
+				// if($student['attendance_status'] == '1') {
+				// 	$attendance = '<small class="label label-success">Present</small>';
+				// } else if($student['attendance_status'] == '2') {
+				// 	$attendance = '<small class="label label-warning">Late</small>';
+				// } else if($student['attendance_status'] == '3') {
+				// 	$attendance = '<small class="label label-danger">Absent</small>';
+				// } else if($student['attendance_status'] == '4') {
+				// 	$attendance = '<small class="label label-info">Half Day</small>';
+				// }				
+				$studentRows = array();			
+				$studentRows[] = $student['id'];
+				$studentRows[] = $student['name'];
+				$studentRows[] = $student['section'];
+				$studentRows[] = $student['teacher'];		
+				//$studentRows[] = $attendance;					
 				$studentData[] = $studentRows;
 			}
 			

@@ -7,8 +7,8 @@ class dbConfig {
     function dbConfig() {
         $this -> serverName = 'localhost';
         $this -> userName = 'root';
-        $this -> password = '';
-        $this -> dbName = 'webdamn_demos';
+        $this -> password = 'root';
+        $this -> dbName = 'proyecto-tomi';
     }
 }
 ?>
