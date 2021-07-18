@@ -3,7 +3,7 @@
     <div class="sidebar-wrapper" id="sideLinks">
             <div class="logo">
                 <a href="index.php" class="simple-text">
-                    School Management
+                    Gestion Escolar
                 </a>
             </div>
             <ul class="nav">
