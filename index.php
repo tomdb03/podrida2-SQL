@@ -28,7 +28,7 @@ include('inc/header.php');
 					</div>                                
 					<div style="margin-bottom: 25px" class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						<input type="contrasena" class="form-control" id="contrasena" name="contrasena" placeholder="contrasena" required>
+						<input type="password" class="form-control" id="password" name="contrasena" placeholder="password" required>
 					</div>
 					<div style="margin-top:10px" class="form-group">                               
 						<div class="col-sm-12 controls">
