@@ -34,7 +34,7 @@
 				<li id="sections">
                     <a href="sections.php" class="menu-link">
                         <i class="ti-harddrives"></i>
-                        <p>Sections</p>
+                        <p>Secciones</p>
                     </a>
                 </li>
                 <li id="classes">

@@ -80,7 +80,7 @@ include('inc/header.php');
 								</div>
 								<div class="col-xs-7">
 									<div class="numbers">
-										<p><strong>Sections</strong></p>										
+										<p><strong>Secciones</strong></p>										
 									</div>
 								</div>
 							</div>
