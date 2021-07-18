@@ -10,7 +10,7 @@
                 <li class="" id="dashboard">
                     <a href="index.php" class="menu-link">
                         <i class="ti-dashboard"></i>
-                        <p>Dashboard</p>
+                        <p>Tablero</p>
                     </a>
                 </li>
                 <!-- <li id="students">
