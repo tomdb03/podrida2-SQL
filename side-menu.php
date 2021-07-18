@@ -40,7 +40,7 @@
                 <li id="classes">
                     <a href="classes.php" class="menu-link">
                         <i class="ti-home"></i>
-                        <p>Classes</p>
+                        <p>Clases</p>
                     </a>
                 </li>
 				<!-- <li id="subjects">

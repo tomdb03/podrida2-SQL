@@ -106,7 +106,7 @@ include('inc/header.php');
 								</div>
 								<div class="col-xs-7">
 									<div class="numbers">
-										<p><strong>Classes</strong></p>										
+										<p><strong>Clases</strong></p>										
 									</div>
 								</div>
 							</div>
