@@ -27,7 +27,7 @@ include('inc/header.php');
 								</div>
 								<div class="col-xs-7">
 									<div class="numbers">
-										<p><strong>Reports</strong></p>									   
+										<p><strong>Reportes</strong></p>									   
 									</div>
 								</div>
 							</div>

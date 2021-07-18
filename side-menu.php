@@ -22,7 +22,7 @@
                 <li id="attendance_report">
                     <a href="attendance_report.php" class="menu-link">
                         <i class="ti-crown"></i>
-                        <p>Reports</p>
+                        <p>Reportes</p>
                     </a>
                 </li>
                 <li id="teacher">
