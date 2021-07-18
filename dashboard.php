@@ -13,7 +13,7 @@ include('inc/header.php');
 		<div class="container-fluid">    			
 			<div class="alert alert-success fade in">
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			  <strong><span class="ti ti-announcement fa-2x"></span> </strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!! Check reports, teachers, sections and classes!</strong>.
+			  <strong><span class="ti ti-announcement fa-2x"></span> </strong> <strong>&nbsp;&nbsp;Bienvenido al tablero escolar!! Aqui se pueden ver los reportes, profesores, secciones y clases!</strong>.
 			</div>						
 			<div class="row"><!--row begins-->
 			<div class="col-lg-3 col-sm-6">
