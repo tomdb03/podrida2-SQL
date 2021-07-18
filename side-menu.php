@@ -28,7 +28,7 @@
                 <li id="teacher">
                     <a href="teacher.php" class="menu-link">
                         <i class="ti-id-badge"></i>
-                        <p>Teachers</p>
+                        <p>Profesores</p>
                     </a>
                 </li>
 				<li id="sections">

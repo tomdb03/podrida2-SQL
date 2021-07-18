@@ -53,7 +53,7 @@ include('inc/header.php');
 								</div>
 								<div class="col-xs-7">
 									<div class="numbers">
-										<p><strong>Teachers</strong></p>									   
+										<p><strong>Profesores</strong></p>									   
 									</div>
 								</div>
 							</div>
