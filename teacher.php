@@ -33,7 +33,7 @@ include('inc/header.php');
 						<tr>
 							<th>ID</th>
 							<th>Name</th>	
-							<th>Assigned Subjects</th>	
+							<th></th>	
 							<th>Class</th>	
 							<th>Sections</th>								
 							<th></th>

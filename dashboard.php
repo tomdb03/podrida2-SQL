@@ -13,7 +13,7 @@ include('inc/header.php');
 		<div class="container-fluid">    			
 			<div class="alert alert-success fade in">
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			  <strong><span class="ti ti-announcement fa-2x"></span> </strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!! Check teachers, sections and classes!</strong>.
+			  <strong><span class="ti ti-announcement fa-2x"></span> </strong> <strong>&nbsp;&nbsp;Welcome to your Admin Dashboard!! Check reports, teachers, sections and classes!</strong>.
 			</div>						
 			<div class="row"><!--row begins-->
 			<div class="col-lg-3 col-sm-6">
@@ -22,7 +22,7 @@ include('inc/header.php');
 							<div class="row">
 								<div class="col-xs-5">
 									<div class="icon-big icon-info text-center">
-										<i class="ti-id-badge"></i>
+										<i class="ti-crown"></i>
 									</div>
 								</div>
 								<div class="col-xs-7">
@@ -75,7 +75,7 @@ include('inc/header.php');
 							<div class="row">
 								<div class="col-xs-5">
 									<div class="icon-big icon-success text-center">
-										<i class="ti-crown"></i>
+										<i class="ti-harddrives"></i>
 									</div>
 								</div>
 								<div class="col-xs-7">
@@ -101,7 +101,7 @@ include('inc/header.php');
 							<div class="row">
 								<div class="col-xs-5">
 									<div class="icon-big icon-success text-center">
-										<i class="ti-crown"></i>
+										<i class="ti-home"></i>
 									</div>
 								</div>
 								<div class="col-xs-7">

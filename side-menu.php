@@ -21,25 +21,25 @@
                     </li>
                 <li id="attendance_report">
                     <a href="attendance_report.php" class="menu-link">
-                        <i class="ti-home"></i>
+                        <i class="ti-crown"></i>
                         <p>Reports</p>
                     </a>
                 </li>
                 <li id="teacher">
                     <a href="teacher.php" class="menu-link">
-                        <i class="ti-home"></i>
-                        <p>Teacher</p>
+                        <i class="ti-id-badge"></i>
+                        <p>Teachers</p>
                     </a>
                 </li>
 				<li id="sections">
                     <a href="sections.php" class="menu-link">
-                        <i class="ti-crown"></i>
+                        <i class="ti-harddrives"></i>
                         <p>Sections</p>
                     </a>
                 </li>
                 <li id="classes">
                     <a href="classes.php" class="menu-link">
-                        <i class="ti-crown"></i>
+                        <i class="ti-home"></i>
                         <p>Classes</p>
                     </a>
                 </li>

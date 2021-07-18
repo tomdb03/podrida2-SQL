@@ -20,7 +20,7 @@ display: none;
 	<?php include('side-menu.php');	?>
 	<div class="content">
 		<div class="container-fluid">
-			<strong>Teacher Section Report</strong>
+			<strong>Teacher Report Section</strong>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="box box-primary">
