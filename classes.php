@@ -16,7 +16,7 @@ include('inc/header.php');
 	<div class="content">
 		<div class="container-fluid">
 			<div>   
-				<a href="#"><strong><span class="ti-crown"></span> Classes Section</strong></a>
+				<a href="#"><strong><span class="ti-crown"></span> Clases</strong></a>
 				<hr>		
 				<div class="panel-heading">
 					<div class="row">
@@ -24,7 +24,7 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addClass" class="btn btn-success btn-xs">Add New Class</button>
+							<button type="button" name="add" id="addClass" class="btn btn-success btn-xs">Agregar Nueva Clase</button>
 						</div>
 					</div>
 				</div>
@@ -32,9 +32,9 @@ include('inc/header.php');
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Name</th>	
-							<th>Sections</th>
-							<th>Class Teacher</th>							
+							<th>Nombre</th>	
+							<th>Seccion</th>
+							<th>Profesor</th>							
 							<th></th>
 							<th></th>							
 						</tr>

@@ -20,21 +20,21 @@ display: none;
 	<?php include('side-menu.php');	?>
 	<div class="content">
 		<div class="container-fluid">
-			<strong>Teacher Report Section</strong>
+			<strong>Sección de informe del maestro</strong>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="box box-primary">
 						<div class="box-header with-border">
-							<h3 class="box-title"><i class="fa fa-search"></i> Select Criteria</h3>
+							<h3 class="box-title"><i class="fa fa-search"></i> Seleccione el criterio</h3>
 						</div>
 						<form id="form1" action="" method="post" accept-charset="utf-8">
 							<div class="box-body">						
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="classid">Teacher</label><small class="req"> *</small>
+											<label for="classid">Profesor</label><small class="req"> *</small>
 											<select id="classid" name="classid" class="form-control" required>
-												<option value="">Select</option>
+												<option value="">Seleccione</option>
 												<?php echo $school->teacherList(); ?>												
 											</select>
 											<span class="text-danger"></span>
@@ -59,7 +59,7 @@ display: none;
 								</div>
 							</div>
 							<div class="box-footer">
-								<button type="button" id="search" name="search" value="search" style="margin-bottom:10px;" class="btn btn-primary btn-sm  checkbox-toggle"><i class="fa fa-search"></i> Search</button> <br>
+								<button type="button" id="search" name="search" value="search" style="margin-bottom:10px;" class="btn btn-primary btn-sm  checkbox-toggle"><i class="fa fa-search"></i> Buscar</button> <br>
 							</div>
 						</form>
 					</div>
