@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$('#classModal').modal('show');
 		$('#classForm')[0].reset();		
 		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar clase");
-		$('#action').val('Agregar clase');
+		$('#action').val('addClass');
 		$('#save').val('Agregar clase');
 	});	
 	
@@ -59,7 +59,7 @@ $(document).ready(function(){
 				$('#cname').val(data.name);
 				$('#sectionid').val(data.section_id);
 				$('#teacherid').val(data.teacher_id);				
-				$('.modal-title').html("<i class='fa fa-plus'></i> Editar Clase");
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar clase");
 				$('#action').val('updateClass');
 				$('#save').val('Guardar');
 			}

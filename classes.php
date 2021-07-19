@@ -68,7 +68,7 @@ include('inc/header.php');
 					<div class="form-group">
 						<label for="mname" class="control-label">Profesor*</label>	
 						<select name="teacherid" id="teacherid" class="form-control" required>
-							<option value="">Seleccionar</option>
+							<option value="">Seleccionar profesor</option>
 							<?php echo $school->getTeacherList(); ?>
 						</select>
 					</div>		
