@@ -22,9 +22,9 @@ $(document).ready(function(){
 	$('#addSection').click(function(){
 		$('#sectionModal').modal('show');
 		$('#sectionForm')[0].reset();		
-		$('.modal-title').html("<i class='fa fa-plus'></i> Add Section");
+		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar Sección");
 		$('#action').val('addSection');
-		$('#save').val('Save');
+		$('#save').val('Guardar');
 	});	
 	
 	$(document).on('submit','#sectionForm', function(event){
@@ -56,9 +56,9 @@ $(document).ready(function(){
 				$('#sectionModal').modal('show');
 				$('#sectionid').val(data.section_id);
 				$('#section_name').val(data.section);
-				$('.modal-title').html("<i class='fa fa-plus'></i> Editar Seccion");
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar Sección");
 				$('#action').val('updateSection');
-				$('#save').val('Save');
+				$('#save').val('Guardar');
 			}
 		})
 	});	
@@ -66,7 +66,7 @@ $(document).ready(function(){
 	$(document).on('click', '.delete', function(){
 		var sectionid = $(this).attr("id");		
 		var action = "deleteSection";
-		if(confirm("Are you sure you want to delete this Section?")) {
+		if(confirm("Esta seguro de que quiere borrar esta sección?")) { 
 			$.ajax({
 				url:"action.php",
 				method:"POST",

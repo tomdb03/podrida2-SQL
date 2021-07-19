@@ -16,7 +16,7 @@ include('inc/header.php');
 	<div class="content">
 		<div class="container-fluid">
 			<div>   
-				<a href="#"><strong><span class="ti-crown"></span> Seccion de Clases</strong></a>
+				<a href="#"><strong><span class="ti-crown"></span> Secciones</strong></a>
 				<hr>		
 				<div class="panel-heading">
 					<div class="row">
@@ -24,7 +24,7 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addSection" class="btn btn-success btn-xs">Agregar Nueva Seccion</button>
+							<button type="button" name="add" id="addSection" class="btn btn-success btn-xs">Nueva sección</button>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@ include('inc/header.php');
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar Sección</h4>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar sección</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">

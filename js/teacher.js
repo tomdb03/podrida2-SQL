@@ -22,9 +22,9 @@ $(document).ready(function(){
 	$('#addTeacher').click(function(){
 		$('#teacherModal').modal('show');
 		$('#teacherForm')[0].reset();		
-		$('.modal-title').html("<i class='fa fa-plus'></i> Add Teacher");
+		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar profesor");
 		$('#action').val('addTeacher');
-		$('#save').val('Save');
+		$('#save').val('Guardar');
 	});	
 	
 	$(document).on('submit','#teacherForm', function(event){
@@ -59,7 +59,7 @@ $(document).ready(function(){
 				console.log("==teacher=="+data.teacher);
 				$('.modal-title').html("<i class='fa fa-plus'></i> Edit Teacher Details");
 				$('#action').val('updateTeacher');
-				$('#save').val('Save');
+				$('#save').val('Guardar');
 			}
 		})
 	});	
