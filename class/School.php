@@ -83,7 +83,7 @@ class School extends Dbconfig {
 			$errorMessage = "Enter Both user and password!";	
 		}
 		return $errorMessage; 		
-	}	
+	}	/**Classes methods*/
 	public function listClasses(){		
 		$sqlQuery = "SELECT c.id, c.name, s.section, t.teacher 
 			FROM ".$this->classesTable." as c
@@ -349,7 +349,7 @@ class School extends Dbconfig {
 		}
 		return $sectionHTML;
 	}
-	/*****************Section methods****************/
+	/*****************Teacher methods****************/
 	public function listTeacher(){		
 		$sqlQuery = "SELECT t.teacher_id, t.teacher, s.subject, c.name, se.section			
 			FROM ".$this->teacherTable." as t 
