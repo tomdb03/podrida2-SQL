@@ -51,22 +51,22 @@ include('inc/header.php');
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><i class="fa fa-plus"></i> Edit Class</h4>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar Clase</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="firstname" class="control-label">Class Name*</label>
+						<label for="firstname" class="control-label">Nombre de la clase*</label>
 						<input type="text" class="form-control" id="cname" name="cname" placeholder="Class Name" required>					
 					</div>	
 					<div class="form-group">
-						<label for="mname" class="control-label">Sections*</label>	
+						<label for="mname" class="control-label">Seccion*</label>	
 						<select name="sectionid" id="sectionid" class="form-control" required>
 							<option value="">Select Section</option>
 							<?php echo $school->getSectionList(); ?>
 						</select>
 					</div>	
 					<div class="form-group">
-						<label for="mname" class="control-label">Assign Class Teacher*</label>	
+						<label for="mname" class="control-label">Profesor*</label>	
 						<select name="teacherid" id="teacherid" class="form-control" required>
 							<option value="">Select</option>
 							<?php echo $school->getTeacherList(); ?>
@@ -77,7 +77,7 @@ include('inc/header.php');
 					<input type="hidden" name="classid" id="classid" />
 					<input type="hidden" name="action" id="action" value="updateClass" />
 					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>
 			</div>
 		</form>
