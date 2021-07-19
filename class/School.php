@@ -501,7 +501,7 @@ class School extends Dbconfig {
 		return $teacherHTML;
 	}
 	/* Student attendance */
-	/*public function getStudents(){		
+	public function getStudents(){		
 		if($_POST["classid"] && $_POST["sectionid"]) {
 			$attendanceYear = date('Y'); 
 			$attendanceMonth = date('m'); 
@@ -747,6 +747,6 @@ class School extends Dbconfig {
 			echo json_encode($output);
 			
 		}
-	} */
+	}
 }
 ?>
