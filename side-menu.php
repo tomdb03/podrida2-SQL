@@ -2,8 +2,8 @@
     <div class="sidebar" data-background-color="black" data-active-color="danger">
     <div class="sidebar-wrapper" id="sideLinks">
             <div class="logo">
-                <a href="index.php" class="simple-text">
-                    Gestion Escolar
+                <a class="simple-text">
+                    Gestión Escolar
                 </a>
             </div>
             <ul class="nav">
@@ -69,13 +69,13 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle">
+				<!-- <button type="button" class="navbar-toggle">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar bar1"></span>
 					<span class="icon-bar bar2"></span>
 					<span class="icon-bar bar3"></span>
-				</button>
-				<a class="navbar-brand" href="#">Sistema de gestión escolar</a>
+				</button> -->
+				<a class="navbar-brand">Sistema de gestión escolar</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -92,7 +92,7 @@
 						<a href="settings.php"><i class="fa fa-cog"></i> <strong>Settings</strong></a>
 						</li>-->
 						<li>
-						<a href="logout.php"><i class="fa fa-power-off"></i> <strong>Logout</strong></a>
+						<a href="logout.php"><i class="fa fa-power-off"></i> <strong>Cerrar sesión</strong></a>
 						</li>
 						</ul>
 					</li>
