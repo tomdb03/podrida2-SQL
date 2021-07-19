@@ -57,7 +57,7 @@ $(document).ready(function(){
 				$('#teacherid').val(data.teacher_id);
 				$('#teacher_name').val(data.teacher);	
 				console.log("==teacher=="+data.teacher);
-				$('.modal-title').html("<i class='fa fa-plus'></i> Edit Teacher Details");
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar profesor");
 				$('#action').val('updateTeacher');
 				$('#save').val('Guardar');
 			}
