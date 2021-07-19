@@ -112,8 +112,8 @@ class School extends Dbconfig {
 			$classesRows[] = $classes['name'];	
 			$classesRows[] = $classes['section'];	
 			$classesRows[] = $classes['teacher'];	
-			$classesRows[] = '<button type="button" name="update" id="'.$classes["id"].'" class="btn btn-warning btn-xs update">Update</button>';
-			$classesRows[] = '<button type="button" name="delete" id="'.$classes["id"].'" class="btn btn-danger btn-xs delete" >Delete</button>';
+			$classesRows[] = '<button type="button" name="update" id="'.$classes["id"].'" class="btn btn-warning btn-xs update">Actualizar</button>';
+			$classesRows[] = '<button type="button" name="delete" id="'.$classes["id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
 			$classesData[] = $classesRows;
 		}
 		$output = array(
@@ -191,8 +191,8 @@ class School extends Dbconfig {
 			$studentRows[] = "<img width='40' height='40' src='upload/".$student['photo']."'>";
 			$studentRows[] = $student['class'];
 			$studentRows[] = $student['section'];		
-			$studentRows[] = '<button type="button" name="update" id="'.$student["id"].'" class="btn btn-warning btn-xs update">Update</button>';
-			$studentRows[] = '<button type="button" name="delete" id="'.$student["id"].'" class="btn btn-danger btn-xs delete" >Delete</button>';
+			$studentRows[] = '<button type="button" name="update" id="'.$student["id"].'" class="btn btn-warning btn-xs update">Actualizar</button>';
+			$studentRows[] = '<button type="button" name="delete" id="'.$student["id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
 			$studentData[] = $studentRows;
 		}
 		$output = array(
@@ -297,8 +297,8 @@ class School extends Dbconfig {
 			$sectionRows = array();			
 			$sectionRows[] = $section['section_id'];
 			$sectionRows[] = $section['section'];				
-			$sectionRows[] = '<button type="button" name="update" id="'.$section["section_id"].'" class="btn btn-warning btn-xs update">Update</button>';
-			$sectionRows[] = '<button type="button" name="delete" id="'.$section["section_id"].'" class="btn btn-danger btn-xs delete" >Delete</button>';
+			$sectionRows[] = '<button type="button" name="update" id="'.$section["section_id"].'" class="btn btn-warning btn-xs update">Actualizar</button>';
+			$sectionRows[] = '<button type="button" name="delete" id="'.$section["section_id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
 			$sectionData[] = $sectionRows;
 		}
 		$output = array(
@@ -378,8 +378,8 @@ class School extends Dbconfig {
 			$teacherRows[] = $teacher['subject'];
 			$teacherRows[] = $teacher['name'];	
 			$teacherRows[] = $teacher['section'];				
-			$teacherRows[] = '<button type="button" name="update" id="'.$teacher["teacher_id"].'" class="btn btn-warning btn-xs update">Update</button>';
-			$teacherRows[] = '<button type="button" name="delete" id="'.$teacher["teacher_id"].'" class="btn btn-danger btn-xs delete" >Delete</button>';
+			$teacherRows[] = '<button type="button" name="update" id="'.$teacher["teacher_id"].'" class="btn btn-warning btn-xs update">Actualizar</button>';
+			$teacherRows[] = '<button type="button" name="delete" id="'.$teacher["teacher_id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
 			$teacherData[] = $teacherRows;
 		}
 		$output = array(
