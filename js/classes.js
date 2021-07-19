@@ -23,9 +23,9 @@ $(document).ready(function(){
 	$('#addClass').click(function(){
 		$('#classModal').modal('show');
 		$('#classForm')[0].reset();		
-		$('.modal-title').html("<i class='fa fa-plus'></i> Add Class");
-		$('#action').val('addClass');
-		$('#save').val('Add Class');
+		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar clase");
+		$('#action').val('Agregar clase');
+		$('#save').val('Agregar clase');
 	});	
 	
 	$(document).on('submit','#classForm', function(event){
@@ -59,9 +59,9 @@ $(document).ready(function(){
 				$('#cname').val(data.name);
 				$('#sectionid').val(data.section_id);
 				$('#teacherid').val(data.teacher_id);				
-				$('.modal-title').html("<i class='fa fa-plus'></i> Edit Class");
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar Clase");
 				$('#action').val('updateClass');
-				$('#save').val('Save');
+				$('#save').val('Guardar');
 			}
 		})
 	});	
@@ -69,7 +69,7 @@ $(document).ready(function(){
 	$(document).on('click', '.delete', function(){
 		var classid = $(this).attr("id");		
 		var action = "deleteClass";
-		if(confirm("Are you sure you want to delete this Class?")) {
+		if(confirm("Esta seguro de que quiere borrar esta clase?")) {
 			$.ajax({
 				url:"action.php",
 				method:"POST",

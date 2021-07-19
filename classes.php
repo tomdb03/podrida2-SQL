@@ -24,7 +24,7 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addClass" class="btn btn-success btn-xs">Agregar Nueva Clase</button>
+							<button type="button" name="add" id="addClass" class="btn btn-success btn-xs">Nueva Clase</button>
 						</div>
 					</div>
 				</div>
@@ -33,7 +33,7 @@ include('inc/header.php');
 						<tr>
 							<th>ID</th>
 							<th>Nombre</th>	
-							<th>Seccion</th>
+							<th>Sección</th>
 							<th>Profesor</th>							
 							<th></th>
 							<th></th>							
@@ -55,20 +55,20 @@ include('inc/header.php');
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="firstname" class="control-label">Nombre de la clase*</label>
-						<input type="text" class="form-control" id="cname" name="cname" placeholder="Class Name" required>					
+						<label for="firstname" class="control-label">Agregar clase*</label>
+						<input type="text" class="form-control" id="cname" name="cname" placeholder="Nombre de la clase" required>					
 					</div>	
 					<div class="form-group">
-						<label for="mname" class="control-label">Seccion*</label>	
+						<label for="mname" class="control-label">Sección*</label>	
 						<select name="sectionid" id="sectionid" class="form-control" required>
-							<option value="">Select Section</option>
+							<option value="">Seleccionar sección</option>
 							<?php echo $school->getSectionList(); ?>
 						</select>
 					</div>	
 					<div class="form-group">
 						<label for="mname" class="control-label">Profesor*</label>	
 						<select name="teacherid" id="teacherid" class="form-control" required>
-							<option value="">Select</option>
+							<option value="">Seleccionar</option>
 							<?php echo $school->getTeacherList(); ?>
 						</select>
 					</div>		
