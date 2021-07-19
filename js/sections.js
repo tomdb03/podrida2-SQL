@@ -56,7 +56,7 @@ $(document).ready(function(){
 				$('#sectionModal').modal('show');
 				$('#sectionid').val(data.section_id);
 				$('#section_name').val(data.section);
-				$('.modal-title').html("<i class='fa fa-plus'></i> Edit Section");
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar Seccion");
 				$('#action').val('updateSection');
 				$('#save').val('Save');
 			}
