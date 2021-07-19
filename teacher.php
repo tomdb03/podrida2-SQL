@@ -16,7 +16,7 @@ include('inc/header.php');
 	<div class="content">
 		<div class="container-fluid">
 			<div>   
-				<a href="#"><strong><span class="ti-crown"></span> Sección de Profesores</strong></a>
+				<a><strong><span class="ti-id-badge"></span> Profesores</strong></a>
 				<hr>		
 				<div class="panel-heading">
 					<div class="row">
