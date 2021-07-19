@@ -15,7 +15,7 @@ include('inc/header.php');
 	<div class="col-md-6">                    
 		<div class="panel panel-info">
 			<div class="panel-heading" style="background:#000;color:white;">
-				<div class="panel-title">Admin Login</div>                        
+				<div class="panel-title">Login para administrador</div>                        
 			</div> 
 			<div style="padding-top:30px" class="panel-body" >
 				<?php if ($errorMessage != '') { ?>
@@ -28,7 +28,7 @@ include('inc/header.php');
 					</div>                                
 					<div style="margin-bottom: 25px" class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						<input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+						<input type="password" class="form-control" id="password" name="password" placeholder="contraseña" required>
 					</div>
 					<div style="margin-top:10px" class="form-group">                               
 						<div class="col-sm-12 controls">
@@ -37,7 +37,7 @@ include('inc/header.php');
 					</div>	
 					<div style="margin-top:10px" class="form-group">                               
 						<div class="col-sm-12 controls">
-						Admin: admin@webdamn.com<br>
+						Administrador: admin@webdamn.com<br>
 						Contraseña: 123	<br><br>									
 						</div>						
 					</div>	

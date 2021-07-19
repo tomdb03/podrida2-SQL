@@ -1,1 +1,1 @@
-<title>webdamn.com - Grupo 7 - Final Web Development</title>
+<title>webdevfinal.com - Grupo 7</title>

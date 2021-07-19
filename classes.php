@@ -24,7 +24,7 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addClass" class="btn btn-success btn-xs">Nueva Clase</button>
+							<button type="button" name="add" id="addClass" class="btn btn-success btn-xs">Nueva clase</button>
 						</div>
 					</div>
 				</div>

@@ -83,7 +83,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<i class="ti-user"></i>
 						<p class="notification"></p>
-						<p><strong><?php echo $_SESSION["admin"]; ?></strong></p>
+						<p><strong>web dev final</strong></p>
 						<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">

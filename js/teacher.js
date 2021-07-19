@@ -67,7 +67,7 @@ $(document).ready(function(){
 	$(document).on('click', '.delete', function(){
 		var teacherid = $(this).attr("id");		
 		var action = "deleteTeacher";
-		if(confirm("Are you sure you want to delete this teacher?")) {
+		if(confirm("Está seguro de que quiere borrar este profesor?")) {
 			$.ajax({
 				url:"action.php",
 				method:"POST",

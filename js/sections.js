@@ -66,7 +66,7 @@ $(document).ready(function(){
 	$(document).on('click', '.delete', function(){
 		var sectionid = $(this).attr("id");		
 		var action = "deleteSection";
-		if(confirm("Esta seguro de que quiere borrar esta sección?")) { 
+		if(confirm("Está seguro de que quiere borrar esta sección?")) { 
 			$.ajax({
 				url:"action.php",
 				method:"POST",
