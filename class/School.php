@@ -158,7 +158,7 @@ class School extends Dbconfig {
 		}
 	}
 	/*****************Student methods****************/
-	public function listStudent(){		
+	/* public function listStudent(){		
 		$sqlQuery = "SELECT s.id, s.name, s.photo, s.gender, s.dob, s.mobile, s.email, s.current_address, s.father_name, s.mother_name,s.admission_no, s.roll_no, s.admission_date, s.academic_year, c.name as class, se.section 
 			FROM ".$this->studentTable." as s
 			LEFT JOIN ".$this->classesTable." as c ON s.class = c.id
@@ -254,7 +254,7 @@ class School extends Dbconfig {
 				WHERE id = '".$_POST["studentid"]."'";		
 			mysqli_query($this->dbConnect, $sqlUpdate);		
 		}
-	}
+	} */
 	public function classList(){		
 		$sqlQuery = "SELECT * FROM ".$this->classesTable;	
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
@@ -501,7 +501,7 @@ class School extends Dbconfig {
 		return $teacherHTML;
 	}
 	/* Student attendance */
-	public function getStudents(){		
+	/*public function getStudents(){		
 		if($_POST["classid"] && $_POST["sectionid"]) {
 			$attendanceYear = date('Y'); 
 			$attendanceMonth = date('m'); 
@@ -747,6 +747,6 @@ class School extends Dbconfig {
 			echo json_encode($output);
 			
 		}
-	}
+	} */
 }
 ?>

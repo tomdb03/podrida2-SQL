@@ -16,7 +16,7 @@ include('inc/header.php');
 	<div class="content">
 		<div class="container-fluid">
 			<div>   
-				<a href="#"><strong><span class="ti-crown"></span> Seccion de Profesores</strong></a>
+				<a href="#"><strong><span class="ti-crown"></span> Sección de Profesores</strong></a>
 				<hr>		
 				<div class="panel-heading">
 					<div class="row">
@@ -24,7 +24,7 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addTeacher" class="btn btn-success btn-xs">Agregar un nuevo profesor</button>
+							<button type="button" name="add" id="addTeacher" class="btn btn-success btn-xs">Nuevo profesor</button>
 						</div>
 					</div>
 				</div>
@@ -35,7 +35,7 @@ include('inc/header.php');
 							<th>Nombre</th>	
 							<th></th>	
 							<th>Clase</th>	
-							<th>Seccion</th>								
+							<th>Sección</th>								
 							<th></th>
 							<th></th>							
 						</tr>
@@ -56,15 +56,15 @@ include('inc/header.php');
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="teacher" class="control-label">Class Name*</label>
-						<input type="text" class="form-control" id="teacher_name" name="teacher_name" placeholder="Teacher Name" required>					
+						<label for="teacher" class="control-label">Nombre del profesor*</label>
+						<input type="text" class="form-control" id="teacher_name" name="teacher_name" placeholder="Nombre del profesor" required>					
 					</div>								
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" name="teacherid" id="teacherid" />
 					<input type="hidden" name="action" id="action" value="updateTeacher" />
 					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>
 			</div>
 		</form>

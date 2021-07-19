@@ -20,7 +20,7 @@ display: none;
 	<?php include('side-menu.php');	?>
 	<div class="content">
 		<div class="container-fluid">
-			<strong>Sección de informe del maestro</strong>
+			<strong>Sección de informe de profesores</strong>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="box box-primary">
@@ -34,7 +34,7 @@ display: none;
 										<div class="form-group">
 											<label for="classid">Profesor</label><small class="req"> *</small>
 											<select id="classid" name="classid" class="form-control" required>
-												<option value="">Seleccione</option>
+												<option value="">Seleccionar</option>
 												<?php echo $school->teacherList(); ?>												
 											</select>
 											<span class="text-danger"></span>
@@ -71,9 +71,9 @@ display: none;
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Name</th>
-								<th>Section</th>	
-								<th>Teacher</th>
+								<th>Nombre</th>
+								<th>Sección</th>	
+								<th>Profesor</th>
 							</tr>
 						</thead>
 					</table>					
