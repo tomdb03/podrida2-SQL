@@ -61,7 +61,7 @@ include('inc/header.php');
 					<input type="hidden" name="sectionid" id="sectionid" />
 					<input type="hidden" name="action" id="action" value="updateSection" />
 					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>
 			</div>
 		</form>
