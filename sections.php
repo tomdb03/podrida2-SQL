@@ -49,12 +49,12 @@ include('inc/header.php');
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar Seccion</h4>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar Sección</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="firstname" class="control-label">Section Name*</label>
-						<input type="text" class="form-control" id="section_name" name="section_name" placeholder="SEction Name" required>							
+						<label for="firstname" class="control-label">Agregar sección*</label>
+						<input type="text" class="form-control" id="section_name" name="section_name" placeholder="Nombre de la sección" required>							
 					</div>									
 				</div>
 				<div class="modal-footer">
