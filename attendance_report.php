@@ -70,7 +70,7 @@ display: none;
 					<table id="studentList" class="table table-bordered table-striped hidden">
 						<thead>
 							<tr>
-								<th>#</th>
+								<th>ID</th>
 								<th>Nombre</th>
 								<th>Sección</th>	
 								<th>Profesor</th>

@@ -19,7 +19,7 @@ $(document).ready(function(){
 		],
 		"pageLength": 10
 	});	
-
+      /** boton de nueva clase */
 	$('#addClass').click(function(){
 		$('#classModal').modal('show');
 		$('#classForm')[0].reset();		
@@ -44,7 +44,7 @@ $(document).ready(function(){
 			}
 		})
 	});	
-	
+	/** boton de actualizar */
 	$(document).on('click', '.update', function(){
 		var classid = $(this).attr("id");
 		var action = 'getClass';
@@ -65,7 +65,7 @@ $(document).ready(function(){
 			}
 		})
 	});	
-	
+	/** boton de borrar */
 	$(document).on('click', '.delete', function(){
 		var classid = $(this).attr("id");		
 		var action = "deleteClass";
