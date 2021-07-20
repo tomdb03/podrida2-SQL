@@ -77,12 +77,13 @@ class School extends Dbconfig {
 				$_SESSION["admin"] = $userDetails['first_name']." ".$userDetails['last_name'];
 				header("location: dashboard.php"); 		
 			} else {		
-				$errorMessage = "Invalid login!";		 
+				$errorMessage = "¡Login inválido!";		 
 			}
 		} else if(!empty($_POST["login"])){
 			$errorMessage = "Enter Both user and password!";	
 		}
-		return $errorMessage; 		
+		return $errorMessage;
+		 		
 	}	/**Classes methods*/
 	public function listClasses(){		
 		$sqlQuery = "SELECT c.id, c.name, s.section, t.teacher 
