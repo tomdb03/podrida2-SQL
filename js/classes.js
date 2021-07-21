@@ -25,7 +25,7 @@ $(document).ready(function(){
 		$('#classForm')[0].reset();		
 		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar clase");
 		$('#action').val('addClass');
-		$('#save').val('Agregar clase');
+		$('#save').val('Guardar');
 	});	
 	
 	$(document).on('submit','#classForm', function(event){
