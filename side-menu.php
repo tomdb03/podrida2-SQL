@@ -3,7 +3,7 @@
     <div class="sidebar-wrapper" id="sideLinks">
             <div class="logo">
                 <a class="simple-text">
-                    Gestión Escolar
+                    Contador
                 </a>
             </div>
             <ul class="nav">
@@ -34,7 +34,7 @@
 				<li id="sections">
                     <a href="sections.php" class="menu-link">
                         <i class="ti-harddrives"></i>
-                        <p>Secciones</p>
+                        <p>Jugadores</p>
                     </a>
                 </li>
                 <li id="classes">

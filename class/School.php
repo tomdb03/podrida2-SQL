@@ -8,13 +8,9 @@ class School extends Dbconfig {
     protected $userName;
     protected $password;
 	protected $dbName;
-	private $userTable = 'sms_user';
-	private $studentTable = 'sms_students';
-	private $classesTable = 'sms_classes';
-	private $sectionsTable = 'sms_section';
-	private $teacherTable = 'sms_teacher';
-	private $subjectsTable = 'sms_subjects';
-	private $attendanceTable = 'sms_attendance';
+	private $jugadoresTabla = 'jugadores';
+	private $partidasTabla = 'partidas';
+	private $tablasTabla = 'tablas';
 	private $dbConnect = false;
     public function __construct(){
         if(!$this->dbConnect){ 		
@@ -23,7 +19,7 @@ class School extends Dbconfig {
             $this -> userName = $database -> userName;
             $this -> password = $database ->password;
 			$this -> dbName = $database -> dbName;			
-            $conn = new mysqli('localhost', 'root', '', 'webdamn_demos');
+            $conn = new mysqli('localhost', 'root', '', 'podrida2');
             if($conn->connect_error){
                 die("Error failed to connect to MySQL: " . $conn->connect_error);
             } else{
@@ -276,17 +272,17 @@ class School extends Dbconfig {
 		return $classHTML;
 	}
 	/*****************Section methods****************/
-	public function listSections(){		
-		$sqlQuery = "SELECT s.section_id, s.section 
-			FROM ".$this->sectionsTable." as s ";
+	public function listJugadores(){		
+		$sqlQuery = "SELECT s.id, s.nombre 
+			FROM ".$this->jugadoresTabla." as s ";
 		if(!empty($_POST["search"]["value"])){
-			$sqlQuery .= ' WHERE (s.section_id LIKE "%'.$_POST["search"]["value"].'%" ';
-			$sqlQuery .= ' OR s.section LIKE "%'.$_POST["search"]["value"].'%" ';					
+			$sqlQuery .= ' WHERE (s.id LIKE "%'.$_POST["search"]["value"].'%" ';
+			$sqlQuery .= ' OR s.nombre LIKE "%'.$_POST["search"]["value"].'%" ';					
 		}
 		if(!empty($_POST["order"])){
 			$sqlQuery .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
 		} else {
-			$sqlQuery .= 'ORDER BY s.section_id DESC ';
+			$sqlQuery .= 'ORDER BY s.id DESC ';
 		}
 		if($_POST["length"] != -1){
 			$sqlQuery .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
@@ -296,10 +292,10 @@ class School extends Dbconfig {
 		$sectionData = array();	
 		while( $section = mysqli_fetch_assoc($result) ) {		
 			$sectionRows = array();			
-			$sectionRows[] = $section['section_id'];
-			$sectionRows[] = $section['section'];				
-			$sectionRows[] = '<button type="button" name="update" id="'.$section["section_id"].'" class="btn btn-warning btn-xs update">Actualizar</button>';
-			$sectionRows[] = '<button type="button" name="delete" id="'.$section["section_id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
+			$sectionRows[] = $section['id'];
+			$sectionRows[] = $section['nombre'];				
+			$sectionRows[] = '<button type="button" name="update" id="'.$section["id"].'" class="btn btn-warning btn-xs update">Editar</button>';
+			$sectionRows[] = '<button type="button" name="delete" id="'.$section["id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
 			$sectionData[] = $sectionRows;
 		}
 		$output = array(
@@ -310,43 +306,43 @@ class School extends Dbconfig {
 		);
 		echo json_encode($output);
 	}
-	public function addSection () {
-		if($_POST["section_name"]) {
-			$insertQuery = "INSERT INTO ".$this->sectionsTable."(section) 
-				VALUES ('".$_POST["section_name"]."')";
+	public function addJugador () {
+		if($_POST["jugador_nombre"]) {
+			$insertQuery = "INSERT INTO ".$this->jugadoresTabla."(nombre) 
+				VALUES ('".$_POST["jugador_nombre"]."')";
 			$userSaved = mysqli_query($this->dbConnect, $insertQuery);
 		}
 	}
-	public function getSection(){
+	public function getJugador(){
 		$sqlQuery = "
-			SELECT * FROM ".$this->sectionsTable." 
-			WHERE section_id = '".$_POST["sectionid"]."'";
+			SELECT * FROM ".$this->jugadoresTabla." 
+			WHERE id = '".$_POST["jugador_id"]."'";
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		echo json_encode($row);
 	}
-	public function updateSection() {
-		if($_POST['sectionid']) {	
-			$updateQuery = "UPDATE ".$this->sectionsTable." 
-			SET section = '".$_POST["section_name"]."'
-			WHERE section_id ='".$_POST["sectionid"]."'";
+	public function updateJugador() {
+		if($_POST['jugador_id']) {	
+			$updateQuery = "UPDATE ".$this->jugadoresTabla." 
+			SET nombre = '".$_POST["jugador_nombre"]."'
+			WHERE id ='".$_POST["jugador_id"]."'";
 			$isUpdated = mysqli_query($this->dbConnect, $updateQuery);		
 		}	
 	}	
-	public function deleteSection(){
-		if($_POST["sectionid"]) {
+	public function deleteJugador(){
+		if($_POST["jugador_id"]) {
 			$sqlUpdate = "
-				DELETE FROM ".$this->sectionsTable."
-				WHERE section_id = '".$_POST["sectionid"]."'";		
+				DELETE FROM ".$this->jugadoresTabla."
+				WHERE id = '".$_POST["jugador_id"]."'";		
 			mysqli_query($this->dbConnect, $sqlUpdate);		
 		}
 	}
-	public function getSectionList(){		
-		$sqlQuery = "SELECT * FROM ".$this->sectionsTable;	
+	public function getJugadoresList(){		
+		$sqlQuery = "SELECT * FROM ".$this->jugadoresTabla;	
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$sectionHTML = '';
 		while( $section = mysqli_fetch_assoc($result)) {
-			$sectionHTML .= '<option value="'.$section["section_id"].'">'.$section["section"].'</option>';	
+			$sectionHTML .= '<option value="'.$section["id"].'">'.$section["nombre"].'</option>';	
 		}
 		return $sectionHTML;
 	}

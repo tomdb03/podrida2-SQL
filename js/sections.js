@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var sectionData = $('#sectionList').DataTable({
+	var sectionData = $('#jugadorList').DataTable({
 		"lengthChange": false,
 		"processing":true,
 		"serverSide":true,
@@ -7,7 +7,7 @@ $(document).ready(function(){
 		"ajax":{
 			url:"action.php",
 			type:"POST",
-			data:{action:'listSections'},
+			data:{action:'listJugadores'},
 			dataType:"json"
 		},
 		"columnDefs":[
@@ -19,11 +19,11 @@ $(document).ready(function(){
 		"pageLength": 10
 	});	
 
-	$('#addSection').click(function(){
+	$('#addJugador').click(function(){
 		$('#sectionModal').modal('show');
 		$('#sectionForm')[0].reset();		
-		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar Sección");
-		$('#action').val('addSection');
+		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar jugador");
+		$('#action').val('addJugador');
 		$('#save').val('Guardar');
 	});	
 	
@@ -45,32 +45,32 @@ $(document).ready(function(){
 	});	
 	
 	$(document).on('click', '.update', function(){
-		var sectionid = $(this).attr("id");
-		var action = 'getSection';
+		var jugador_id = $(this).attr("id");
+		var action = 'getJugador';
 		$.ajax({
 			url:'action.php',
 			method:"POST",
-			data:{sectionid:sectionid, action:action},
+			data:{jugador_id:jugador_id, action:action},
 			dataType:"json",
 			success:function(data){
 				$('#sectionModal').modal('show');
-				$('#sectionid').val(data.section_id);
-				$('#section_name').val(data.section);
-				$('.modal-title').html("<i class='fa fa-plus'></i> Editar Sección");
-				$('#action').val('updateSection');
+				$('#jugador_id').val(data.id);
+				$('#jugador_nombre').val(data.nombre);
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar jugador");
+				$('#action').val('updateJugador');
 				$('#save').val('Guardar');
 			}
 		})
 	});	
 	
 	$(document).on('click', '.delete', function(){
-		var sectionid = $(this).attr("id");		
-		var action = "deleteSection";
-		if(confirm("Está seguro de que quiere borrar esta sección?")) { 
+		var jugador_id = $(this).attr("id");		
+		var action = "deleteJugador";
+		if(confirm("Está seguro de que quiere borrar este jugador?")) { 
 			$.ajax({
 				url:"action.php",
 				method:"POST",
-				data:{sectionid:sectionid, action:action},
+				data:{jugador_id:jugador_id, action:action},
 				success:function(data) {					
 					sectionData.ajax.reload();
 				}

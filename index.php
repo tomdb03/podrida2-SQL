@@ -1,11 +1,11 @@
 <?php 
 ob_start();
 include('class/School.php');
-if(!empty($_SESSION["adminUserid"])) {	
+//if(!empty($_SESSION["adminUserid"])) {	
 	header("location: dashboard.php"); 	
-}
+//}
 $school = new School();
-$errorMessage =  $school->adminLogin();
+//$errorMessage =  $school->adminLogin();
 include('inc/header.php');
 ?>
 <?php include('inc/title.php'); ?>

@@ -1,7 +1,7 @@
 <?php 
 include('class/School.php');
 $school = new School();
-$school->adminLoginStatus();
+// $school->adminLoginStatus();
 include('inc/header.php');
 ?>
 <?php include('inc/title.php'); ?>
@@ -16,7 +16,7 @@ include('inc/header.php');
 	<div class="content">
 		<div class="container-fluid">
 			<div>   
-				<a><strong><span class="ti-harddrives"></span> Secciones</strong></a>
+				<a><strong><span class="ti-harddrives"></span>Jugadores</strong></a>
 				<hr>		
 				<div class="panel-heading">
 					<div class="row">
@@ -24,17 +24,17 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addSection" class="btn btn-success btn-xs">Nueva sección</button>
+							<button type="button" name="add" id="addJugador" class="btn btn-success btn-xs">Nuevo jugador</button>
 						</div>
 					</div>
 				</div>
-				<table id="sectionList" class="table table-bordered table-striped">
+				<table id="jugadorList" class="table table-bordered table-striped">
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Nombre</th>											
+							<th>Nombre</th>
 							<th></th>
-							<th></th>							
+							<th></th>															
 						</tr>
 					</thead>
 				</table>
@@ -49,17 +49,17 @@ include('inc/header.php');
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar sección</h4>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar jugador</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="firstname" class="control-label">Agregar sección*</label>
-						<input type="text" class="form-control" id="section_name" name="section_name" placeholder="Nombre de la sección" required>							
+						<label for="firstname" class="control-label">Complete:</label>
+						<input type="text" class="form-control" id="jugador_nombre" name="jugador_nombre" placeholder="Nombre del jugador" required>							
 					</div>									
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" name="sectionid" id="sectionid" />
-					<input type="hidden" name="action" id="action" value="updateSection" />
+					<input type="hidden" name="jugador_id" id="jugador_id" />
+					<input type="hidden" name="action" id="action" value="updateJugador" />
 					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>
