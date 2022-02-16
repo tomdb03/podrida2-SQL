@@ -16,7 +16,7 @@ include('inc/header.php');
 	<div class="content">
 		<div class="container-fluid">
 			<div>   
-				<a><strong><span class="ti-harddrives"></span>Jugadores</strong></a>
+				<a><strong><span class="ti-harddrives"></span> Jugadores</strong></a>
 				<hr>		
 				<div class="panel-heading">
 					<div class="row">

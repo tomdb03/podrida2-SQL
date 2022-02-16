@@ -347,20 +347,17 @@ class School extends Dbconfig {
 		return $sectionHTML;
 	}
 	/*****************Teacher methods****************/
-	public function listTeacher(){		
-		$sqlQuery = "SELECT t.teacher_id, t.teacher, s.subject, c.name, se.section			
-			FROM ".$this->teacherTable." as t 
-			LEFT JOIN ".$this->subjectsTable." as s ON t.subject_id = s.subject_id
-			LEFT JOIN ".$this->classesTable." as c ON t.teacher_id = c.teacher_id
-			LEFT JOIN ".$this->sectionsTable." as se ON c.section = se.section_id ";
+	public function listPartida(){		
+		$sqlQuery = "SELECT t.id, t.fecha, t.cantidadJugadores, t.ganador			
+			FROM ".$this->partidasTabla." as t ";
 		if(!empty($_POST["search"]["value"])){
-			$sqlQuery .= ' WHERE (t.teacher_id LIKE "%'.$_POST["search"]["value"].'%" ';
-			$sqlQuery .= ' OR t.teacher LIKE "%'.$_POST["search"]["value"].'%" ';					
+			$sqlQuery .= ' WHERE (t.id LIKE "%'.$_POST["search"]["value"].'%" ';
+			$sqlQuery .= ' OR t.fecha LIKE "%'.$_POST["search"]["value"].'%" ';					
 		}
 		if(!empty($_POST["order"])){
 			$sqlQuery .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
 		} else {
-			$sqlQuery .= 'ORDER BY t.teacher_id DESC ';
+			$sqlQuery .= 'ORDER BY t.id DESC ';
 		}
 		if($_POST["length"] != -1){
 			$sqlQuery .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
@@ -370,13 +367,12 @@ class School extends Dbconfig {
 		$teacherData = array();	
 		while( $teacher = mysqli_fetch_assoc($result) ) {		
 			$teacherRows = array();			
-			$teacherRows[] = $teacher['teacher_id'];
-			$teacherRows[] = $teacher['teacher'];
-			$teacherRows[] = $teacher['subject'];
-			$teacherRows[] = $teacher['name'];	
-			$teacherRows[] = $teacher['section'];				
-			$teacherRows[] = '<button type="button" name="update" id="'.$teacher["teacher_id"].'" class="btn btn-warning btn-xs update">Actualizar</button>';
-			$teacherRows[] = '<button type="button" name="delete" id="'.$teacher["teacher_id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
+			$teacherRows[] = $teacher['id'];
+			$teacherRows[] = $teacher['fecha'];
+			$teacherRows[] = $teacher['cantidadJugadores'];
+			$teacherRows[] = $teacher['ganador'];
+			$teacherRows[] = '<button type="button" name="update" id="'.$teacher["id"].'" class="btn btn-warning btn-xs update">Editar</button>';
+			$teacherRows[] = '<button type="button" name="delete" id="'.$teacher["id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
 			$teacherData[] = $teacherRows;
 		}
 		$output = array(
@@ -387,34 +383,34 @@ class School extends Dbconfig {
 		);
 		echo json_encode($output);
 	}
-	public function addTeacher () {
-		if($_POST["teacher_name"]) {
-			$insertQuery = "INSERT INTO ".$this->teacherTable."(teacher) 
-				VALUES ('".$_POST["teacher_name"]."')";
+	public function addPartida () {
+		if($_POST["partida_fecha"]) {
+			$insertQuery = "INSERT INTO ".$this->partidasTabla."(fecha) 
+				VALUES ('".$_POST["partida_fecha"]."')";
 			$userSaved = mysqli_query($this->dbConnect, $insertQuery);
 		}
 	}
-	public function getTeacher(){
+	public function getPartida(){
 		$sqlQuery = "
-			SELECT * FROM ".$this->teacherTable." 
-			WHERE teacher_id = '".$_POST["teacherid"]."'";
+			SELECT * FROM ".$this->partidasTabla." 
+			WHERE id = '".$_POST["partida_id"]."'";
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		echo json_encode($row);
 	}
-	public function updateTeacher() {
-		if($_POST['teacherid']) {	
-			$updateQuery = "UPDATE ".$this->teacherTable." 
-			SET teacher = '".$_POST["teacher_name"]."'
-			WHERE teacher_id ='".$_POST["teacherid"]."'";
+	public function updatePartida() {
+		if($_POST['partida_id']) {	
+			$updateQuery = "UPDATE ".$this->partidasTabla." 
+			SET fecha = '".$_POST["partida_fecha"]."'
+			WHERE id ='".$_POST["partida_id"]."'";
 			$isUpdated = mysqli_query($this->dbConnect, $updateQuery);		
 		}	
 	}	
-	public function deleteTeacher(){
-		if($_POST["teacherid"]) {
+	public function deletePartida(){
+		if($_POST["partida_id"]) {
 			$sqlUpdate = "
-				DELETE FROM ".$this->teacherTable."
-				WHERE teacher_id = '".$_POST["teacherid"]."'";		
+				DELETE FROM ".$this->partidasTabla."
+				WHERE id = '".$_POST["partida_id"]."'";		
 			mysqli_query($this->dbConnect, $sqlUpdate);		
 		}
 	}

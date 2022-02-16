@@ -48,21 +48,21 @@ if(!empty($_POST['action']) && $_POST['action'] == 'updateJugador') {
 if(!empty($_POST['action']) && $_POST['action'] == 'deleteJugador') {
 	$school->deleteJugador();
 }
-/********sections********/
-if(!empty($_POST['action']) && $_POST['action'] == 'listTeacher') {
-	$school->listTeacher();
+/********teachers********/
+if(!empty($_POST['action']) && $_POST['action'] == 'listPartida') {
+	$school->listPartida();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'addTeacher') {
-	$school->addTeacher();
+if(!empty($_POST['action']) && $_POST['action'] == 'addPartida') {
+	$school->addPartida();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'getTeacher') {
-	$school->getTeacher();
+if(!empty($_POST['action']) && $_POST['action'] == 'getPartida') {
+	$school->getPartida();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'updateTeacher') {
-	$school->updateTeacher();
+if(!empty($_POST['action']) && $_POST['action'] == 'updatePartida') {
+	$school->updatePartida();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'deleteTeacher') {
-	$school->deleteTeacher();
+if(!empty($_POST['action']) && $_POST['action'] == 'deletePartida') {
+	$school->deletePartida();
 }
 /********Subject********/
 if(!empty($_POST['action']) && $_POST['action'] == 'listSubject') {

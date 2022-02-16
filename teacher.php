@@ -16,7 +16,7 @@ include('inc/header.php');
 	<div class="content">
 		<div class="container-fluid">
 			<div>   
-				<a><strong><span class="ti-id-badge"></span> Profesores</strong></a>
+				<a><strong><span class="ti-id-badge"></span> Partidas</strong></a>
 				<hr>		
 				<div class="panel-heading">
 					<div class="row">
@@ -24,20 +24,19 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addTeacher" class="btn btn-success btn-xs">Nuevo profesor</button>
+							<button type="button" name="add" id="addPartida" class="btn btn-success btn-xs">Nueva partida</button>
 						</div>
 					</div>
 				</div>
-				<table id="teacherList" class="table table-bordered table-striped">
+				<table id="partidaList" class="table table-bordered table-striped">
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Nombre</th>	
-							<th></th>	
-							<th>Clase</th>	
-							<th>Sección</th>								
-							<th></th>
-							<th></th>							
+							<th>Fecha</th>	
+							<th>Cantidad de jugadores</th>	
+							<th>Ganador</th>	
+							<th></th>								
+							<th></th>														
 						</tr>
 					</thead>
 				</table>
@@ -52,17 +51,17 @@ include('inc/header.php');
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar Profesor</h4>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar partida</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="teacher" class="control-label">Nombre del profesor*</label>
-						<input type="text" class="form-control" id="teacher_name" name="teacher_name" placeholder="Nombre del profesor" required>					
+						<label for="teacher" class="control-label">*</label>
+						<input type="text" class="form-control" id="partida_fecha" name="partida_fecha" placeholder="Fecha de la partida" required>					
 					</div>								
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" name="teacherid" id="teacherid" />
-					<input type="hidden" name="action" id="action" value="updateTeacher" />
+					<input type="hidden" name="partida_id" id="partida_id" />
+					<input type="hidden" name="action" id="action" value="updatePartida" />
 					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>

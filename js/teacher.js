@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var teacherData = $('#teacherList').DataTable({
+	var teacherData = $('#partidaList').DataTable({
 		"lengthChange": false,
 		"processing":true,
 		"serverSide":true,
@@ -7,23 +7,23 @@ $(document).ready(function(){
 		"ajax":{
 			url:"action.php",
 			type:"POST",
-			data:{action:'listTeacher'},
+			data:{action:'listPartida'},
 			dataType:"json"
 		},
 		"columnDefs":[
 			{
-				"targets":[0, 5, 6],
+				"targets":[0, 4, 5],
 				"orderable":false,
 			},
 		],
 		"pageLength": 10
 	});	
 
-	$('#addTeacher').click(function(){
+	$('#addPartida').click(function(){
 		$('#teacherModal').modal('show');
 		$('#teacherForm')[0].reset();		
-		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar profesor");
-		$('#action').val('addTeacher');
+		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar partida");
+		$('#action').val('addPartida');
 		$('#save').val('Guardar');
 	});	
 	
@@ -45,33 +45,32 @@ $(document).ready(function(){
 	});	
 	
 	$(document).on('click', '.update', function(){
-		var teacherid = $(this).attr("id");
-		var action = 'getTeacher';
+		var partida_id = $(this).attr("id");
+		var action = 'getPartida';
 		$.ajax({
 			url:'action.php',
 			method:"POST",
-			data:{teacherid:teacherid, action:action},
+			data:{partida_id:partida_id, action:action},
 			dataType:"json",
 			success:function(data){
 				$('#teacherModal').modal('show');
-				$('#teacherid').val(data.teacher_id);
-				$('#teacher_name').val(data.teacher);	
-				console.log("==teacher=="+data.teacher);
-				$('.modal-title').html("<i class='fa fa-plus'></i> Editar profesor");
-				$('#action').val('updateTeacher');
+				$('#partida_id').val(data.id);
+				$('#partida_fecha').val(data.fecha);	
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar partida");
+				$('#action').val('updatePartida');
 				$('#save').val('Guardar');
 			}
 		})
 	});	
 	
 	$(document).on('click', '.delete', function(){
-		var teacherid = $(this).attr("id");		
-		var action = "deleteTeacher";
-		if(confirm("Está seguro de que quiere borrar este profesor?")) {
+		var partida_id = $(this).attr("id");		
+		var action = "deletePartida";
+		if(confirm("Está seguro de que quiere borrar esta partida?")) {
 			$.ajax({
 				url:"action.php",
 				method:"POST",
-				data:{teacherid:teacherid, action:action},
+				data:{partida_id:partida_id, action:action},
 				success:function(data) {					
 					teacherData.ajax.reload();
 				}
