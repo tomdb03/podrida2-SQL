@@ -3,6 +3,7 @@ $(document).ready(function(){
 		"lengthChange": false,
 		"processing":true,
 		"serverSide":true,
+		"bFilter": false,
 		"order":[],
 		"ajax":{
 			url:"action.php",

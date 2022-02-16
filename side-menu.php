@@ -28,7 +28,7 @@
                 <li id="teacher">
                     <a href="teacher.php" class="menu-link">
                         <i class="ti-id-badge"></i>
-                        <p>Profesores</p>
+                        <p>Partidas</p>
                     </a>
                 </li>
 				<li id="sections">
@@ -40,7 +40,7 @@
                 <li id="classes">
                     <a href="classes.php" class="menu-link">
                         <i class="ti-home"></i>
-                        <p>Clases</p>
+                        <p>Tablas</p>
                     </a>
                 </li>
 				<!-- <li id="subjects">

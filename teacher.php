@@ -55,8 +55,19 @@ include('inc/header.php');
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="teacher" class="control-label">*</label>
+						<label for="teacher" class="control-label">Fecha*</label>
 						<input type="text" class="form-control" id="partida_fecha" name="partida_fecha" placeholder="Fecha de la partida" required>					
+					</div>
+					<div class="form-group">
+						<label for="teacher" class="control-label">Cantidad de jugadores*</label>	
+						<input type="text" class="form-control" id="partida_cantidadJugadores" name="partida_cantidadJugadores" placeholder="Cantidad de jugadores" required>
+					</div>	
+					<div class="form-group">
+						<label for="teacher" class="control-label">Ganador*</label>	
+						<select name="jugador_id" id="jugador_id" class="form-control" required>
+							<option value="">Seleccionar ganador</option>
+							<?php echo $school->getJugadoresList(); ?>
+						</select>					
 					</div>								
 				</div>
 				<div class="modal-footer">

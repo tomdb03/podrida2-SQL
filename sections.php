@@ -1,7 +1,7 @@
 <?php 
 include('class/School.php');
 $school = new School();
-// $school->adminLoginStatus();
+$school->adminLoginStatus();
 include('inc/header.php');
 ?>
 <?php include('inc/title.php'); ?>
@@ -53,7 +53,7 @@ include('inc/header.php');
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="firstname" class="control-label">Complete:</label>
+						<label for="firstname" class="control-label">Jugador*</label>
 						<input type="text" class="form-control" id="jugador_nombre" name="jugador_nombre" placeholder="Nombre del jugador" required>							
 					</div>									
 				</div>
