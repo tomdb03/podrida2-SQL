@@ -1,7 +1,7 @@
 <?php 
 include('class/School.php');
 $school = new School();
-$school->adminLoginStatus();
+// $school->adminLoginStatus();
 include('inc/header.php');
 ?>
 <?php include('inc/title.php'); ?>
