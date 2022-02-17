@@ -10,7 +10,7 @@ class School extends Dbconfig {
 	protected $dbName;
 	private $jugadoresTabla = 'jugadores';
 	private $partidasTabla = 'partidas';
-	private $tablasTabla = 'tablas';
+	private $manosTabla = 'manos';
 	private $dbConnect = false;
     public function __construct(){
         if(!$this->dbConnect){ 		
@@ -81,21 +81,21 @@ class School extends Dbconfig {
 		return $errorMessage;
 		 		
 	}	/**Classes methods*/
-	public function listClasses(){		
-		$sqlQuery = "SELECT c.id, c.name, s.section, t.teacher 
-			FROM ".$this->classesTable." as c
-			LEFT JOIN ".$this->sectionsTable." as s ON c.section = s.section_id
-			LEFT JOIN ".$this->teacherTable." as t ON c.teacher_id = t.teacher_id ";
+	public function listManos(){		
+		$sqlQuery = "SELECT c.nroMano, s.nombre, t.fecha, c.pedidas, c.hechas, c.puntos, c.repartidor 
+			FROM ".$this->manosTabla." as c
+			LEFT JOIN ".$this->jugadoresTabla." as s ON c.idJugador = s.id
+			LEFT JOIN ".$this->partidasTabla." as t ON c.idPartida = t.id ";
 		if(!empty($_POST["search"]["value"])){
-			$sqlQuery .= ' WHERE (c.id LIKE "%'.$_POST["search"]["value"].'%" ';
-			$sqlQuery .= ' OR c.name LIKE "%'.$_POST["search"]["value"].'%" ';	
-			$sqlQuery .= ' OR s.section LIKE "%'.$_POST["search"]["value"].'%" ';
-			$sqlQuery .= ' OR t.teacher LIKE "%'.$_POST["search"]["value"].'%" ';				
+			$sqlQuery .= ' WHERE (c.nroMano LIKE "%'.$_POST["search"]["value"].'%" ';
+			$sqlQuery .= ' OR s.nombre LIKE "%'.$_POST["search"]["value"].'%" ';	
+			$sqlQuery .= ' OR t.fecha LIKE "%'.$_POST["search"]["value"].'%" ';
+			$sqlQuery .= ' OR c.puntos LIKE "%'.$_POST["search"]["value"].'%" ';				
 		}
 		if(!empty($_POST["order"])){
 			$sqlQuery .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
 		} else {
-			$sqlQuery .= 'ORDER BY c.id DESC ';
+			$sqlQuery .= 'ORDER BY c.nroMano DESC ';
 		}
 		if($_POST["length"] != -1){
 			$sqlQuery .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
@@ -105,12 +105,15 @@ class School extends Dbconfig {
 		$classesData = array();	
 		while( $classes = mysqli_fetch_assoc($result) ) {		
 			$classesRows = array();			
-			$classesRows[] = $classes['id'];
-			$classesRows[] = $classes['name'];	
-			$classesRows[] = $classes['section'];	
-			$classesRows[] = $classes['teacher'];	
-			$classesRows[] = '<button type="button" name="update" id="'.$classes["id"].'" class="btn btn-warning btn-xs update">Actualizar</button>';
-			$classesRows[] = '<button type="button" name="delete" id="'.$classes["id"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
+			$classesRows[] = $classes['nroMano'];
+			$classesRows[] = $classes['nombre'];	
+			$classesRows[] = $classes['fecha'];	
+			$classesRows[] = $classes['pedidas'];
+			$classesRows[] = $classes['hechas'];
+			$classesRows[] = $classes['puntos'];	
+			$classesRows[] = $classes['repartidor'];					
+			$classesRows[] = '<button type="button" name="update" id="'.$classes["nroMano"].'" class="btn btn-warning btn-xs update">Editar</button>';
+			$classesRows[] = '<button type="button" name="delete" id="'.$classes["nroMano"].'" class="btn btn-danger btn-xs delete" >Borrar</button>';
 			$classesData[] = $classesRows;
 		}
 		$output = array(
@@ -121,36 +124,36 @@ class School extends Dbconfig {
 		);
 		echo json_encode($output);
 	}
-	public function addClass () {
-		if($_POST["cname"]) {
-			$insertQuery = "INSERT INTO ".$this->classesTable."(name, section, teacher_id) 
-				VALUES ('".$_POST["cname"]."', '".$_POST["sectionid"]."', '".$_POST["teacherid"]."')";
+	public function addMano () {
+		if($_POST["nroMano"]) {
+			$insertQuery = "INSERT INTO ".$this->classesTable."(nroMano, idJugador, idPartida, pedidas, hechas, puntos, repartidor) 
+				VALUES ('".$_POST["mano_nroMano"]."', '".$_POST["mano_idJugador"]."', '".$_POST["mano_idPartida"]."', '".$_POST["mano_pedidas"]."', '".$_POST["mano_hechas"]."', '".$_POST["mano_puntos"]."', '".$_POST["mano_repartidor"]."')";
 			$userSaved = mysqli_query($this->dbConnect, $insertQuery);
 		}
 	}
-	public function getClassesDetails(){
-		$sqlQuery = "SELECT c.id, c.name, s.section, s.section_id, t.teacher_id 
-			FROM ".$this->classesTable." as c
-			LEFT JOIN ".$this->sectionsTable." as s ON c.section = s.section_id 
-			LEFT JOIN ".$this->teacherTable." as t ON c.teacher_id = t.teacher_id
-			WHERE c.id = '".$_POST["classid"]."'";		
+	public function getManosDetails(){
+		$sqlQuery = "SELECT c.nroMano, s.nombre, t.fecha, c.pedidas, c.hechas, c.puntos, c.repartidor
+			FROM ".$this->manosTabla." as c
+			LEFT JOIN ".$this->jugadoresTabla." as s ON c.idJugador = s.id 
+			LEFT JOIN ".$this->partidasTabla." as t ON c.idPartida = t.id
+			WHERE c.nroMano = '".$_POST["mano_nroMano"]."'";		
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		echo json_encode($row);
 	}
-	public function updateClass() {
-		if($_POST['classid']) {	
-			$updateQuery = "UPDATE ".$this->classesTable." 
-			SET Name = '".$_POST["cname"]."', section = '".$_POST["sectionid"]."', teacher_id = '".$_POST["teacherid"]."'
-			WHERE id ='".$_POST["classid"]."'";
+	public function updateMano() {
+		if($_POST['mano_nroMano']) {	
+			$updateQuery = "UPDATE ".$this->manosTabla." 
+			SET nroMano = '".$_POST["mano_nroMano"]."', idJugador = '".$_POST["mano_idJugador"]."', idPartida = '".$_POST["mano_idPartida"]."', pedidas = '".$_POST["mano_pedidas"]."', hechas = '".$_POST["mano_hechas"]."', puntos = '".$_POST["mano_puntos"]."', repartidor = '".$_POST["mano_repartidor"]."'
+			WHERE nroMano ='".$_POST["mano_nroMano"]."'";
 			$isUpdated = mysqli_query($this->dbConnect, $updateQuery);		
 		}	
 	}	
-	public function deleteClass(){
-		if($_POST["classid"]) {
+	public function deleteMano(){
+		if($_POST["mano_nroMano"]) {
 			$sqlUpdate = "
-				DELETE FROM ".$this->classesTable."
-				WHERE id = '".$_POST["classid"]."'";		
+				DELETE FROM ".$this->manosTabla."
+				WHERE nroMano = '".$_POST["mano_nroMano"]."'";		
 			mysqli_query($this->dbConnect, $sqlUpdate);		
 		}
 	}
@@ -252,12 +255,12 @@ class School extends Dbconfig {
 			mysqli_query($this->dbConnect, $sqlUpdate);		
 		}
 	} */
-	public function classList(){		
-		$sqlQuery = "SELECT * FROM ".$this->classesTable;	
+	public function manoList(){		
+		$sqlQuery = "SELECT * FROM ".$this->manosTabla;	
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$classHTML = '';
 		while( $class = mysqli_fetch_assoc($result)) {
-			$classHTML .= '<option value="'.$class["id"].'">'.$class["name"].'</option>';	
+			$classHTML .= '<option value="'.$class["nroMano"].'">'.$class["idJugador"].'</option>';	
 		}
 		return $classHTML;
 	}
@@ -487,12 +490,12 @@ class School extends Dbconfig {
 			mysqli_query($this->dbConnect, $sqlUpdate);		
 		}
 	}
-	public function getTeacherList(){		
-		$sqlQuery = "SELECT * FROM ".$this->teacherTable;	
+	public function getPartidasList(){		
+		$sqlQuery = "SELECT * FROM ".$this->partidasTabla;	
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$teacherHTML = '';
 		while( $teacher = mysqli_fetch_assoc($result)) {
-			$teacherHTML .= '<option value="'.$teacher["teacher_id"].'">'.$teacher["teacher"].'</option>';	
+			$teacherHTML .= '<option value="'.$teacher["id"].'">'.$teacher["fecha"].'</option>';	
 		}
 		return $teacherHTML;
 	}

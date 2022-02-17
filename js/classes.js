@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var classesData = $('#classList').DataTable({
+	var classesData = $('#manoList').DataTable({
 		"lengthChange": false,
 		"processing":true,
 		"serverSide":true,
@@ -8,23 +8,23 @@ $(document).ready(function(){
 		"ajax":{
 			url:"action.php",
 			type:"POST",
-			data:{action:'listClasses'},
+			data:{action:'listManos'},
 			dataType:"json"
 		},
 		"columnDefs":[
 			{
-				"targets":[0, 4, 5],
+				"targets":[0, 6, 7],
 				"orderable":false,
 			},
 		],
 		"pageLength": 10
 	});	
       /** boton de nueva clase */
-	$('#addClass').click(function(){
+	$('#addMano').click(function(){
 		$('#classModal').modal('show');
 		$('#classForm')[0].reset();		
-		$('.modal-title').html("<i class='fa fa-plus'></i> Agregar clase");
-		$('#action').val('addClass');
+		$('.modal-title').html("<i class='fa fa-plus'></i> Nueva mano");
+		$('#action').val('addMano');
 		$('#save').val('Guardar');
 	});	
 	
@@ -46,34 +46,37 @@ $(document).ready(function(){
 	});	
 	/** boton de actualizar */
 	$(document).on('click', '.update', function(){
-		var classid = $(this).attr("id");
-		var action = 'getClass';
+		var mano_nroMano = $(this).attr("id");
+		var action = 'getMano';
 		$.ajax({
 			url:'action.php',
 			method:"POST",
-			data:{classid:classid, action:action},
+			data:{mano_nroMano:mano_nroMano, action:action},
 			dataType:"json",
 			success:function(data){
 				$('#classModal').modal('show');
-				$('#classid').val(data.id);
-				$('#cname').val(data.name);
-				$('#sectionid').val(data.section_id);
-				$('#teacherid').val(data.teacher_id);				
-				$('.modal-title').html("<i class='fa fa-plus'></i> Editar clase");
-				$('#action').val('updateClass');
+				$('#mano_nroMano').val(data.nroMano);
+				$('#mano_idJugador').val(data.id);
+				$('#mano_idPartida').val(data.id);
+				$('#mano_pedidas').val(data.pedidas);					
+				$('#mano_hechas').val(data.hechas);
+				$('#mano_puntos').val(data.puntos);
+				$('#mano_repartidor').val(data.repartidor);				
+				$('.modal-title').html("<i class='fa fa-plus'></i> Editar mano");
+				$('#action').val('updateMano');
 				$('#save').val('Guardar');
 			}
 		})
 	});	
 	/** boton de borrar */
 	$(document).on('click', '.delete', function(){
-		var classid = $(this).attr("id");		
-		var action = "deleteClass";
-		if(confirm("Esta seguro de que quiere borrar esta clase?")) {
+		var mano_nroMano = $(this).attr("id");		
+		var action = "deleteMano";
+		if(confirm("Esta seguro de que quiere borrar esta mano?")) {
 			$.ajax({
 				url:"action.php",
 				method:"POST",
-				data:{classid:classid, action:action},
+				data:{mano_nroMano:mano_nroMano, action:action},
 				success:function(data) {					
 					classesData.ajax.reload();
 				}

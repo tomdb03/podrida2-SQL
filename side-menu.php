@@ -75,7 +75,7 @@
 					<span class="icon-bar bar2"></span>
 					<span class="icon-bar bar3"></span>
 				</button> -->
-				<a class="navbar-brand">Sistema de gestión escolar</a>
+				<a class="navbar-brand">Sistema de conteo de puntos para podrida</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -83,14 +83,14 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<i class="ti-user"></i>
 						<p class="notification"></p>
-						<p><strong>web dev final</strong></p>
+						<p><strong>Opciones</strong></p>
 						<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
-						<!-- <li><a href="profile.php"><i class="fa fa-user"></i> <strong>Profile</strong> </a></li>
+						<li><a href="profile.php"><i class="fa fa-user"></i> <strong>Profile</strong> </a></li>
 						<li>               
 						<a href="settings.php"><i class="fa fa-cog"></i> <strong>Settings</strong></a>
-						</li>-->
+						</li>
 						<li>
 						<a href="logout.php"><i class="fa fa-power-off"></i> <strong>Cerrar sesión</strong></a>
 						</li>

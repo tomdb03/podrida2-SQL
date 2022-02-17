@@ -2,20 +2,20 @@
 include('class/School.php');
 $school = new School();
 
-if(!empty($_POST['action']) && $_POST['action'] == 'listClasses') {
-	$school->listClasses();
+if(!empty($_POST['action']) && $_POST['action'] == 'listManos') {
+	$school->listManos();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'addClass') {
-	$school->addClass();
+if(!empty($_POST['action']) && $_POST['action'] == 'addMano') {
+	$school->addMano();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'getClass') {
-	$school->getClassesDetails();
+if(!empty($_POST['action']) && $_POST['action'] == 'getMano') {
+	$school->getManosDetails();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'updateClass') {
-	$school->updateClass();
+if(!empty($_POST['action']) && $_POST['action'] == 'updateMano') {
+	$school->updateMano();
 }
-if(!empty($_POST['action']) && $_POST['action'] == 'deleteClass') {
-	$school->deleteClass();
+if(!empty($_POST['action']) && $_POST['action'] == 'deleteMano') {
+	$school->deleteMano();
 }
 // if(!empty($_POST['action']) && $_POST['action'] == 'listStudent') {
 // 	$school->listStudent();

@@ -24,17 +24,20 @@ include('inc/header.php');
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="col-md-2" align="right">
-							<button type="button" name="add" id="addClass" class="btn btn-success btn-xs">Nueva clase</button>
+							<button type="button" name="add" id="addMano" class="btn btn-success btn-xs">Nueva mano</button>
 						</div>
 					</div>
 				</div>
-				<table id="classList" class="table table-bordered table-striped">
+				<table id="manoList" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Nombre</th>	
-							<th>Sección</th>
-							<th>Profesor</th>							
+							<th>Número de mano</th>
+							<th>Jugador</th>	
+							<th>Partida</th>
+							<th>Pedidas</th>
+							<th>Hechas</th>	
+							<th>Puntos</th>
+							<th>Repartidor</th>														
 							<th></th>
 							<th></th>							
 						</tr>
@@ -51,31 +54,47 @@ include('inc/header.php');
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar Clase</h4>
+					<h4 class="modal-title"><i class="fa fa-plus"></i> Editar mano</h4>
 				</div>
 				<div class="modal-body">
+					<!-- <div class="form-group">
+						<label for="firstname" class="control-label">Nueva mano*</label>
+						<input type="text" class="form-control" id="mano_nroMano" name="mano_nroMano" placeholder="Número de mano" required>					
+					</div>	 -->
 					<div class="form-group">
-						<label for="firstname" class="control-label">Agregar clase*</label>
-						<input type="text" class="form-control" id="cname" name="cname" placeholder="Nombre de la clase" required>					
-					</div>	
-					<div class="form-group">
-						<label for="mname" class="control-label">Sección*</label>	
-						<select name="sectionid" id="sectionid" class="form-control" required>
-							<option value="">Seleccionar sección</option>
-							<?php echo $school->getSectionList(); ?>
+						<label for="mname" class="control-label">Jugador*</label>	
+						<select name="mano_idJugador" id="mano_idJugador" class="form-control" required>
+							<option value="">Seleccionar jugador</option>
+							<?php echo $school->getJugadoresList(); ?>
 						</select>
 					</div>	
 					<div class="form-group">
-						<label for="mname" class="control-label">Profesor*</label>	
+						<label for="mname" class="control-label">Partida*</label>	
 						<select name="teacherid" id="teacherid" class="form-control" required>
-							<option value="">Seleccionar profesor</option>
-							<?php echo $school->getTeacherList(); ?>
+							<option value="">Seleccionar partida</option>
+							<?php echo $school->getPartidasList(); ?>
 						</select>
-					</div>		
+					</div>
+					<div class="form-group">
+						<label for="firstname" class="control-label">Pedidas*</label>
+						<input type="text" class="form-control" id="mano_pedidas" name="mano_pedidas" placeholder="Pedidas" required>					
+					</div>
+					<div class="form-group">
+						<label for="firstname" class="control-label">Hechas*</label>
+						<input type="text" class="form-control" id="mano_hechas" name="mano_hechas" placeholder="Hechas" required>					
+					</div>
+					<div class="form-group">
+						<label for="firstname" class="control-label">Puntos*</label>
+						<input type="text" class="form-control" id="mano_puntos" name="mano_puntos" placeholder="Puntos" required>					
+					</div>
+					<div class="form-group">
+						<label for="firstname" class="control-label">Repartidor*</label>
+						<input type="text" class="form-control" id="mano_repartidor" name="mano_repartidor" placeholder="Repartidor" required>					
+					</div>			
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" name="classid" id="classid" />
-					<input type="hidden" name="action" id="action" value="updateClass" />
+					<input type="hidden" name="mano_nroMano" id="mano_nroMano" />
+					<input type="hidden" name="action" id="action" value="updateMano" />
 					<input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>
