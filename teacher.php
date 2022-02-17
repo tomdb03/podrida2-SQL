@@ -64,10 +64,7 @@ include('inc/header.php');
 					</div>	
 					<div class="form-group">
 						<label for="teacher" class="control-label">Ganador*</label>	
-						<select name="jugador_id" id="jugador_id" class="form-control" required>
-							<option value="">Seleccionar ganador</option>
-							<?php echo $school->getJugadoresList(); ?>
-						</select>					
+						<input type="text" class="form-control" id="partida_ganador" name="partida_ganador" placeholder="Ganador" required>					
 					</div>								
 				</div>
 				<div class="modal-footer">

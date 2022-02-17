@@ -3,7 +3,6 @@ $(document).ready(function(){
 		"lengthChange": false,
 		"processing":true,
 		"serverSide":true,
-		"bFilter": false,
 		"order":[],
 		"ajax":{
 			url:"action.php",
@@ -56,7 +55,9 @@ $(document).ready(function(){
 			success:function(data){
 				$('#teacherModal').modal('show');
 				$('#partida_id').val(data.id);
-				$('#partida_fecha').val(data.fecha);	
+				$('#partida_fecha').val(data.fecha);
+				$('#partida_cantidadJugadores').val(data.cantidadJugadores);
+				$('#partida_ganador').val(data.ganador);	
 				$('.modal-title').html("<i class='fa fa-plus'></i> Editar partida");
 				$('#action').val('updatePartida');
 				$('#save').val('Guardar');

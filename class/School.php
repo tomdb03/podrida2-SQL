@@ -262,12 +262,12 @@ class School extends Dbconfig {
 		return $classHTML;
 	}
 
-	public function teacherList(){		
-		$sqlQuery = "SELECT * FROM ".$this->teacherTable;	
+	public function partidaList(){		
+		$sqlQuery = "SELECT * FROM ".$this->partidasTabla;	
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$classHTML = '';
 		while($class = mysqli_fetch_assoc($result)) {
-			$classHTML .= '<option value="'.$class["teacher_id"].'">'.$class["teacher"].'</option>';	
+			$classHTML .= '<option value="'.$class["id"].'">'.$class["fecha"].'</option>';	
 		}
 		return $classHTML;
 	}
@@ -348,11 +348,14 @@ class School extends Dbconfig {
 	}
 	/*****************Teacher methods****************/
 	public function listPartida(){		
-		$sqlQuery = "SELECT t.id, t.fecha, t.cantidadJugadores, t.ganador			
+		$sqlQuery = "SELECT t.id, t.fecha, t.cantidadJugadores, t.ganador		
 			FROM ".$this->partidasTabla." as t ";
+
 		if(!empty($_POST["search"]["value"])){
 			$sqlQuery .= ' WHERE (t.id LIKE "%'.$_POST["search"]["value"].'%" ';
-			$sqlQuery .= ' OR t.fecha LIKE "%'.$_POST["search"]["value"].'%" ';					
+			$sqlQuery .= ' OR t.fecha LIKE "%'.$_POST["search"]["value"].'%" ';
+			$sqlQuery .= ' OR t.cantidadJugadores LIKE "%'.$_POST["search"]["value"].'%" ';					
+			$sqlQuery .= ' OR t.ganador LIKE "%'.$_POST["search"]["value"].'%" ';					
 		}
 		if(!empty($_POST["order"])){
 			$sqlQuery .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
@@ -385,14 +388,14 @@ class School extends Dbconfig {
 	}
 	public function addPartida () {
 		if($_POST["partida_fecha"]) {
-			$insertQuery = "INSERT INTO ".$this->partidasTabla."(fecha) 
-				VALUES ('".$_POST["partida_fecha"]."')";
+			$insertQuery = "INSERT INTO ".$this->partidasTabla."(fecha, cantidadJugadores, ganador) 
+				VALUES ('".$_POST["partida_fecha"]."', '".$_POST["partida_cantidadJugadores"]."', '".$_POST["partida_ganador"]."')";
 			$userSaved = mysqli_query($this->dbConnect, $insertQuery);
 		}
 	}
 	public function getPartida(){
 		$sqlQuery = "
-			SELECT * FROM ".$this->partidasTabla." 
+			SELECT * FROM ".$this->partidasTabla."
 			WHERE id = '".$_POST["partida_id"]."'";
 		$result = mysqli_query($this->dbConnect, $sqlQuery);	
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -401,7 +404,7 @@ class School extends Dbconfig {
 	public function updatePartida() {
 		if($_POST['partida_id']) {	
 			$updateQuery = "UPDATE ".$this->partidasTabla." 
-			SET fecha = '".$_POST["partida_fecha"]."'
+			SET fecha = '".$_POST["partida_fecha"]."', cantidadJugadores = '".$_POST["partida_cantidadJugadores"]."', ganador = '".$_POST["partida_ganador"]."'
 			WHERE id ='".$_POST["partida_id"]."'";
 			$isUpdated = mysqli_query($this->dbConnect, $updateQuery);		
 		}	
